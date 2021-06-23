@@ -1,0 +1,10 @@
+<launch>
+
+   <include file="$(find finalarm_dbrt)/launch/launch_components/dbrt_finalarm_setup.launch"/>
+   <!-- include file="$(find finalarm_dbrt)/launch/launch_components/dbrt_finalarm_rviz.launch"/ -->
+   <include file="$(find finalarm_dbrt)/launch/launch_components/dbrt_finalarm_tracker_gpu.launch"/>
+   <!-- include file="$(find dbrt_example)/launch/launch_components/play_bagfile.launch" / -->
+
+   <node pkg="tf" type="static_transform_publisher" name="base_camera_broadcaster" args="-0.00153175 0.21709285 0.51574489 -0.03527891  0.87034321 -0.0513133 ORIG camera_link 100" />
+
+</launch>

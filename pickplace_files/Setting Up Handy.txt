@@ -1,0 +1,64 @@
+FOLLOW THESE IN ORDER
+
+--New Terminal--
+roscore
+
+--New Terminal--
+roslaunch freenect_launch freenect.launch (optional: camera:='XTION')
+
+--New Terminal--
+sudo chmod 666 /dev/ttyUSB0
+(above command only needs to be run once)
+roslaunch finalarm_control controller_manager.launch
+(if not the first time running the above, power cycle the robot before running)
+
+--New Terminal--
+roslaunch finalarm_control start_controller.launch
+
+--New Terminal--
+roslaunch finalarm_dbrt dbrt_robot_state_pub.launch
+(if [disable_torque_handy-1] does not finish cleanly you must restart process from controller_manager)
+
+--New Terminal--
+roslaunch finalarm_dbrt dbrt_launch_gpu.launch
+(to see changes in URDF you must restart process from dbrt_robot_state_pub)
+***************CHECK HAND ROTATION - MAY NEED TO ADJUST JOINT 7 90 DEGREES******************************
+
+--New Terminal--
+roslaunch finalarm_dbrt dbrt_move_group.launch
+
+TO VISUALIZE MOVE-IT TRAJECTORY PLANNING
+--New Terminal--
+roslaunch finalarm_moveit_config moveit_rviz.launch
+
+TO RUN THE PICK-PLACE EXPERIMENT
+--New Terminal--
+roslaunch handy_experiment pickplace.launch
+
+OTHER IMPORTANT COMMANDS
+GETTING KINECT FRAME
+Run python get_frames_from_kinect.py in Code/
+
+GETTING GRASP PREDICTION
+python tools/demo_graspRGD_vis_mask.py --net res50 --dataset grasp from within Code/grasp_multiObject_multiGrasp/
+then paste output into calc_base_to_obj.py in Code/aruco_tag_saver/ and run
+(TODO: clean this up)
+
+SOFTWARE VERSIONS:
+CUDA: 8.0
+CUDNN: 5.1.10-1+cuda8.0
+TENSORFLOW-GPU: 1.1.0
+
+CATKIN_MAKE COMMAND FOR BUILDING PACKAGES
+catkin_make -DCMAKE_BUILD_TYPE=Release -DDBOT_BUILD_GPU=On
+
+RECORDING A BAG
+topics:
+/XTION/depth/camera_info    600 msgs    : sensor_msgs/CameraInfo
+/XTION/depth/image          600 msgs    : sensor_msgs/Image     
+/joint_states              1519 msgs    : sensor_msgs/JointState
+/tf                        5242 msgs    : tf/tfMessage
+
+rosbag record -O output_name.bag /camera/depth/camera_info /camera/depth/image /joint_states /tf 
+
+(also optionally /camera/rgb/image_color)

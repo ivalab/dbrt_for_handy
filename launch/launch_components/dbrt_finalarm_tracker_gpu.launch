@@ -1,0 +1,11 @@
+<launch>
+
+  <arg name="config" default="$(find finalarm_dbrt)/config/dbrt_finalarm_tracker_gpu.yaml" />
+
+  <node name="fusion_tracker" type="fusion_tracker" pkg="dbrt" output="screen" respawn="false" launch-prefix="">
+    <param name="robot_description_package_path" type="string" value="$(find finalarm_description)" />
+    <rosparam command="load" file="$(arg config)" />
+    <rosparam command="load" file="$(find finalarm_dbrt)/config/kinect_camera.yaml" />
+  </node>
+
+</launch>

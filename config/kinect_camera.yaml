@@ -1,0 +1,8 @@
+depth_image_topic: /camera/depth/image
+camera_info_topic: /camera/depth/camera_info
+
+resolution:
+  width: 640
+  height: 480
+
+downsampling_factor: 8 

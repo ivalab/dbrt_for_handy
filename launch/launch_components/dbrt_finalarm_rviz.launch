@@ -1,0 +1,4 @@
+<launch>
+<node pkg="rviz" type="rviz" name="rviz" 
+   args="-d $(find finalarm_dbrt/config/dbrt_finalarm_visualization.rviz"/>
+</launch>

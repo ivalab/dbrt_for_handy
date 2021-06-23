@@ -1,0 +1,605 @@
+<robot
+  name="finalarm_description">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0350973236171887 2.50206915783369E-06 0.065743599294131"
+        rpy="0 0 0" />
+      <mass
+        value="1.10920648420033" />
+      <inertia
+        ixx="0.00147297997205269"
+        ixy="5.79000298723505E-08"
+        ixz="0.000465603614160417"
+        iyy="0.00175551330106355"
+        iyz="8.3367086911193E-08"
+        izz="0.000282540363613262" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finalarm_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finalarm_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link
+    name="link_2">
+    <inertial>
+      <origin
+        xyz="-6.93463695862484E-06 0.00621364138420952 -0.106231333331331"
+        rpy="0 0 0" />
+      <mass
+        value="0.471538287399183" />
+      <inertia
+        ixx="0.000594636803033852"
+        ixy="4.18367904578793E-08"
+        ixz="2.84400874159916E-08"
+        iyy="0.000252468984748607"
+        iyz="0.000138585143141858"
+        izz="0.000342180686752844" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finalarm_description/meshes/link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finalarm_description/meshes/link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0622"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_3">
+    <inertial>
+      <origin
+        xyz="0.00793341258344955 -0.110904264599027 -0.00575400019431305"
+        rpy="0 0 0" />
+      <mass
+        value="0.176545926561924" />
+      <inertia
+        ixx="0.000425424927691206"
+        ixy="5.26272787508631E-05"
+        ixz="2.58168360040485E-06"
+        iyy="0.000154323835845121"
+        iyz="-3.20603667204071E-06"
+        izz="0.000292957292568659" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finalarm_description/meshes/link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finalarm_description/meshes/link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2"
+    type="revolute">
+    <origin
+      xyz="0 -0.00824 -0.14225"
+      rpy="1.5708 0 0" />
+    <parent
+      link="link_2" />
+    <child
+      link="link_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.35"
+      upper="2.35"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_4">
+    <inertial>
+      <origin
+        xyz="-1.73545194991076E-06 3.75572226324616E-05 -0.0816772034389157"
+        rpy="0 0 0" />
+      <mass
+        value="0.104087748544112" />
+      <inertia
+        ixx="6.93717063486783E-05"
+        ixy="6.54701343252157E-12"
+        ixz="-1.44623624646317E-08"
+        iyy="6.93717016796198E-05"
+        iyz="1.86949875679207E-08"
+        izz="5.87170423433308E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finalarm_description/meshes/link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finalarm_description/meshes/link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_3"
+    type="revolute">
+    <origin
+      xyz="0 -0.1721 -0.00754"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="link_3" />
+    <child
+      link="link_4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_5">
+    <inertial>
+      <origin
+        xyz="-0.00688423968276193 0.114612027416276 -0.000499999595380635"
+        rpy="0 0 0" />
+      <mass
+        value="0.0763995324256172" />
+      <inertia
+        ixx="8.29546143352217E-05"
+        ixy="1.14091706441386E-05"
+        ixz="-1.59199761034349E-08"
+        iyy="4.00141503682598E-06"
+        iyz="-7.48281114065265E-13"
+        izz="8.32476026046573E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finalarm_description/meshes/link_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finalarm_description/meshes/link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_4"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.11"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="link_4" />
+    <child
+      link="link_5" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.6"
+      upper="2.6"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_6">
+    <inertial>
+      <origin
+        xyz="1.38984233255535E-05 -3.02219879037557E-05 -0.0318489971663578"
+        rpy="0 0 0" />
+      <mass
+        value="0.0455105599924779" />
+      <inertia
+        ixx="1.81847622671867E-06"
+        ixy="-1.91108318783744E-11"
+        ixz="-1.66843283355986E-08"
+        iyy="1.81917584885151E-06"
+        iyz="-1.98071025204659E-09"
+        izz="7.0394766986178E-10" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finalarm_description/meshes/link_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finalarm_description/meshes/link_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_5"
+    type="revolute">
+    <origin
+      xyz="0 0.1566 -0.0005"
+      rpy="-1.5708 0 3.1416" />
+    <parent
+      link="link_5" />
+    <child
+      link="link_6" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_7">
+    <inertial>
+      <origin
+        xyz="-0.00629355961550483 0.0442792267246015 0.000326216217654773"
+        rpy="0 0 0" />
+      <mass
+        value="0.0556423949669392" />
+      <inertia
+        ixx="1.05130243025505E-05"
+        ixy="2.33123833939753E-06"
+        ixz="-2.66898357890617E-08"
+        iyy="1.10674138275574E-06"
+        iyz="1.86827301995486E-07"
+        izz="1.05592545554182E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finalarm_description/meshes/link_7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finalarm_description/meshes/link_7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_6"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.044805"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="link_6" />
+    <child
+      link="link_7" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.75"
+      upper="1.75"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_8">
+    <inertial>
+      <origin
+        xyz="0.000676098257304233 0.00129718102685669 -0.0321063764893514"
+        rpy="0 0 0" />
+      <mass
+        value="0.0761324825533059" />
+      <inertia
+        ixx="5.51757264149968E-06"
+        ixy="-7.81410502092211E-09"
+        ixz="1.50349715571903E-07"
+        iyy="5.50721823606219E-06"
+        iyz="2.85360740313087E-07"
+        izz="1.9358084038589E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finalarm_description/meshes/link_8.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finalarm_description/meshes/link_8.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_7"
+    type="revolute">
+    <origin
+      xyz="0.0035 0.068995 0.00025"
+      rpy="-1.5708 0 3.1416" />
+    <parent
+      link="link_7" />
+    <child
+      link="link_8" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_9">
+    <inertial>
+      <origin
+        xyz="0.0330748692850015 -0.0156609082500656 -0.000838888003525384"
+        rpy="0 0 0" />
+      <mass
+        value="0.0633522380056329" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finalarm_description/meshes/link_9.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finalarm_description/meshes/link_9.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_8"
+    type="revolute">
+    <origin
+      xyz="-0.0174 0 -0.057005"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="link_8" />
+    <child
+      link="link_9" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_10">
+    <inertial>
+      <origin
+        xyz="0.0338709492936103 0.0160630015014153 -0.000269069197496835"
+        rpy="0 0 0" />
+      <mass
+        value="0.0618364235211619" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finalarm_description/meshes/link_10.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finalarm_description/meshes/link_10.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_9"
+    type="revolute">
+    <origin
+      xyz="0.0186 0 -0.056505"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="link_8" />
+    <child
+      link="link_10" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_eef" />
+  <joint
+    name="joint_eef"
+    type="fixed">
+    <origin
+      xyz="0 0 -0.15225"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="link_8" />
+    <child
+      link="link_eef" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <joint name="XTION_JOINT" type="fixed">
+        <parent link="base_link"/>
+        <child link="XTION_RGB"/>
+	<origin xyz="0 1 1" rpy="0 0 0"/>
+    </joint>
+    
+    <link name="XTION_RGB">
+      <inertial>
+	<origin xyz="0 0 0" rpy="0 0 0"/>
+	<mass value="1.0"/>
+	<inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+      </inertial>
+      <visual>
+	<material name="DarpaGrey" />
+	<origin xyz="0 0 0" rpy="0 0 0"/>
+	<geometry>
+	  <cylinder length="0.01" radius="0.006"/>
+	</geometry>
+      </visual>
+    </link>
+
+
+
+</robot>

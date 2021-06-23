@@ -1,0 +1,15 @@
+<launch>
+  <!-- Load the URDF into the ROS Parameter Server -->
+
+  <!-- Disable torque on all humanoid joints/motors -->
+  <node name="disable_torque_handy" pkg="finalarm_control" type="disable_torque_handy.py"/>
+
+  <!-- Start Handy joint state publisher (dynamixel_msgs.msg JointState -> sensor_msgs.msg JointState) -->
+  <node name="handy_joint_state_publisher" pkg="finalarm_control" type="finalarm_joint_state_publisher.py"/>
+  
+  <!-- Convert joint states to TF transforms for rviz, etc -->
+  <node 
+    name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"> <param name="publish_frequency" value="50" />
+  </node>
+
+</launch>
